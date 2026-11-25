@@ -1,410 +1,579 @@
-<!DOCTYPE html>
+
+
+<!doctype html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#ffffff">
-<meta name="description" content="NovaDigital: portal educativo sobre internet, conectividad, fibra óptica y tecnología digital en Colombia.">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Layout Bootstrap 5</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<title>NovaDigital | Tecnología y conectividad</title>
+  <style>
+    body {
+      background: #eaeaea;
+    }
 
-<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-TG2C454F"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-</script>
-<style>
-:root{
---bg:#ffffff;
---panel:#ffffff;
---line:#e5e7eb;
---blue:#3978e8;
---blue-light:#eef4ff;
---text:#202938;
---muted:#667085;
-}
+    footer ul {
+      list-style: none;
+      padding-left: 0;
+    }
 
-*{box-sizing:border-box}
+    footer li {
+      margin-bottom: 5px;
+    }
 
-html{scroll-behavior:smooth}
+    .certificado {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-body{
-margin:0;
-background:var(--bg);
-color:var(--text);
-font:16px/1.7 system-ui,Arial,sans-serif;
-}
+    .certificado img {
+      width: 40px;
+    }
 
-a{color:var(--blue)}
+    /* CARRUSEL */
+    .carousel-wrap {
+      background: #fff;
+      padding: 2.25rem 0 3rem;
+    }
 
-.wrap{
-width:min(1050px,92%);
-margin:auto;
-}
+    #carouselExample .carousel-inner {
+      width: 88%;
+      margin: 0 auto;
+    }
 
-header{
-position:sticky;
-top:0;
-z-index:5;
-background:#ffffffee;
-border-bottom:1px solid var(--line);
-backdrop-filter:blur(12px);
-}
+    #carouselExample .carousel-item img {
+      border-radius: 1.5rem;
+    }
 
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:15px;
-flex-wrap:wrap;
-padding:17px 0;
-}
+    #carouselExample::before,
+    #carouselExample::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 3vw;
+      min-width: 14px;
+      border-radius: 1.5rem;
+      pointer-events: none;
+    }
 
-.logo{
-font-size:23px;
-font-weight:850;
-color:var(--blue);
-text-decoration:none;
-}
+    #carouselExample::before {
+      left: 0;
+      background: linear-gradient(180deg, #e4a2ab 0%, #d98f9b 55%, #f3cdd3 100%);
+    }
 
-.links{
-display:flex;
-gap:16px;
-flex-wrap:wrap;
-}
+    #carouselExample::after {
+      right: 0;
+      background: linear-gradient(180deg, #f6b9c3 0%, #fbdae0 100%);
+    }
 
-.links a{
-text-decoration:none;
-font-size:14px;
-color:#374151;
-}
+    #carouselExample .carousel-control-prev,
+    #carouselExample .carousel-control-next {
+      width: 3rem;
+      opacity: 1;
+    }
 
-.links a:hover{color:var(--blue)}
+    #carouselExample .carousel-control-prev-icon,
+    #carouselExample .carousel-control-next-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background-color: #fff;
+      background-size: 36% auto;
+      background-position: center;
+      background-repeat: no-repeat;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .16);
+      filter: none;
+    }
 
-.hero{
-padding:85px 0;
-background:linear-gradient(135deg,#ffffff,#f3f7ff);
-border-bottom:1px solid var(--line);
-}
+    #carouselExample .carousel-control-prev-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
+    }
 
-.tag{
-font-size:12px;
-letter-spacing:2px;
-color:var(--blue);
-text-transform:uppercase;
-font-weight:700;
-}
+    #carouselExample .carousel-control-next-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    }
 
-h1{
-font-size:clamp(38px,7vw,66px);
-line-height:1.1;
-letter-spacing:-2px;
-max-width:800px;
-color:#182230;
-}
+    #carouselExample .carousel-indicators {
+      bottom: -1.5rem;
+      margin: 0;
+    }
 
-h1 span{color:var(--blue)}
+    #carouselExample .carousel-indicators [data-bs-target] {
+      box-sizing: border-box;
+      width: 9px;
+      height: 9px;
+      margin: 0 6px;
+      border: 1.5px solid #e8122c;
+      border-radius: 50%;
+      background-color: transparent;
+      opacity: 1;
+    }
 
-h2{
-font-size:28px;
-line-height:1.3;
-color:#202938;
-}
+    #carouselExample .carousel-indicators .active {
+      background-color: #e8122c;
+    }
 
-p{color:var(--muted)}
+    /* HEADER */
+    .header-main {
+      position: relative;
+      padding: .55rem 1.5rem;
+    }
 
-.btn{
-display:inline-block;
-background:var(--blue);
-color:#ffffff;
-padding:12px 20px;
-border-radius:7px;
-text-decoration:none;
-font-weight:800;
-margin:10px 8px 0 0;
-transition:.2s;
-}
+    .header-top {
+      width: 100%;
+      min-width: 0;
+    }
 
-.btn:hover{
-background:#245fc5;
-transform:translateY(-2px);
-}
+    .header-menu {
+      flex-shrink: 0;
+    }
 
-section{
-padding:38px 0;
-scroll-margin-top:85px;
-}
+    .btn-menu {
+      width: 34px;
+      height: 34px;
+      padding: 0;
+      flex: 0 0 34px;
+      background: #e8112d;
+      border: 0;
+      color: #fff;
+      font-size: 17px;
+      line-height: 1;
+    }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:16px;
-}
+    .btn-menu:hover {
+      background: #c60f27;
+      color: #fff;
+    }
 
-.card{
-background:#ffffff;
-border:1px solid var(--line);
-border-radius:13px;
-padding:22px;
-box-shadow:0 4px 16px rgba(15,23,42,.035);
-transition:.2s;
-}
+    .menu-label {
+      font-size: 14px;
+      font-weight: 500;
+      color: #1a1a1a;
+      white-space: nowrap;
+    }
 
-.card:hover{
-transform:translateY(-3px);
-box-shadow:0 8px 24px rgba(15,23,42,.08);
-}
+    .menu-sep {
+      font-size: 11px;
+      color: #b3b3b3;
+    }
 
-.card h3{
-color:var(--blue);
-margin-top:0;
-}
+    .menu-section {
+      font-size: 14px;
+      color: #8b8b8b;
+    }
 
-.notice{
-padding:15px 18px;
-border-left:3px solid var(--blue);
-background:#f5f8ff;
-border-radius:5px;
-}
+    .header-logo {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      margin: 0;
+      padding: 0;
+    }
 
-input,textarea{
-width:100%;
-font:inherit;
-padding:12px;
-margin:8px 0 14px;
-border:1px solid var(--line);
-border-radius:6px;
-background:#ffffff;
-color:#202938;
-}
+    .search-btn {
+      color: #1a1a1a;
+      font-size: 18px;
+      line-height: 1;
+    }
 
-button{
-width:100%;
-font:inherit;
-padding:12px;
-margin:8px 0 14px;
-border:0;
-border-radius:6px;
-background:var(--blue);
-color:#ffffff;
-font-weight:800;
-cursor:pointer;
-}
+    .search-btn:hover {
+      color: #b10f36;
+    }
 
-button:hover{background:#245fc5}
+    .header-actions {
+      flex-shrink: 0;
+    }
 
-label{color:var(--muted)}
+    .btn-ob {
+      width: 160px;
+      height: 41px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: #b10f36;
+      border: 1px solid #b10f36;
+      border-radius: 6px;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 500;
+      line-height: 1.15;
+      padding: 4px 8px;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
 
-details{
-padding:15px 0;
-border-bottom:1px solid var(--line);
-}
+    .btn-ob:hover {
+      background: #96102e;
+      border-color: #96102e;
+      color: #fff;
+    }
 
-summary{
-color:var(--blue);
-font-weight:700;
-cursor:pointer;
-}
+    .btn-ob-dark {
+      background: #872344;
+      border-color: #872344;
+    }
 
-footer{
-border-top:1px solid var(--line);
-padding:30px 0;
-background:#fafbfc;
-}
+    .btn-ob-dark:hover {
+      background: #750c30;
+      border-color: #750c30;
+    }
 
-footer a{margin-right:14px}
+    /* NAVEGACION SECUNDARIA */
+    .subnav {
+      border-bottom: 1px solid #e8e8e8;
+      padding: .25rem 0;
+      background: #fff;
+    }
 
-.small{font-size:13px}
+    .subnav-link {
+      display: inline-block;
+      padding: .45rem .75rem;
+      font-size: 14px;
+      font-weight: 600;
+      color: #1a1a1a;
+      text-decoration: none;
+      white-space: nowrap;
+    }
 
-@media(max-width:600px){
-.hero{padding:55px 0}
-.links{gap:10px}
-h2{font-size:24px}
-}
-</style>
+    .subnav-link:hover {
+      color: #b10f36;
+    }
+
+    .subnav-link-active {
+      background: #f9d6e0;
+      color: #b10f36;
+      border-radius: 50rem;
+    }
+
+    @media (max-width: 590px) {
+      .header-main {
+        padding: 8px 14px;
+      }
+
+      .header-top {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .header-menu {
+        gap: 6px !important;
+      }
+
+      .header-menu .menu-sep,
+      .header-menu .menu-section {
+        display: none;
+      }
+
+      .header-actions {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex: 1 1 auto;
+        min-width: 0;
+        gap: 8px !important;
+      }
+
+      .search-btn {
+        display: none;
+      }
+
+      .btn-ob {
+        width: auto;
+        min-width: 0;
+        height: 32px;
+        flex: 1 1 0;
+        padding: 3px 5px;
+        font-size: 10px;
+        line-height: 1.1;
+        white-space: normal;
+      }
+
+      .carousel-wrap {
+        padding: 1rem 0 2.5rem;
+      }
+
+      #carouselExample .carousel-item img {
+        border-radius: 1rem;
+      }
+
+      #carouselExample::before,
+      #carouselExample::after {
+        border-radius: 1rem;
+      }
+
+      #carouselExample .carousel-indicators {
+        bottom: -1.25rem;
+      }
+
+      .card p {
+        font-size: 13px;
+      }
+
+      .subnav {
+        padding: .4rem 0;
+        overflow-x: auto;
+      }
+
+      .subnav .container-fluid {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        min-width: 100%;
+      }
+
+      .subnav-link {
+        padding: .45rem .55rem;
+        font-size: 13px;
+        font-weight: 500;
+      }
+
+      .subnav-link-active {
+        background: #f27f99;
+        color: #fff;
+      }
+    }
+
+    @media (max-width: 370px) {
+      .header-main {
+        padding-right: 8px;
+        padding-left: 8px;
+      }
+
+      .header-top {
+        gap: 5px;
+      }
+
+      .header-menu {
+        gap: 4px !important;
+      }
+
+      .btn-menu {
+        width: 30px;
+        height: 30px;
+        flex-basis: 30px;
+      }
+
+      .menu-label {
+        font-size: 12px;
+      }
+
+      .header-actions {
+        gap: 5px !important;
+      }
+
+      .btn-ob {
+        font-size: 9px;
+        padding: 3px;
+      }
+
+      .subnav-link {
+        padding-right: 4px;
+        padding-left: 4px;
+        font-size: 12px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-<nav class="wrap">
-<a class="logo" href="#inicio">NovaDigital</a>
+  <!-- NAVBAR PRINCIPAL -->
+  <nav class="navbar bg-white border-bottom header-main">
+    <div class="container-fluid p-0">
+      <div class="header-top d-flex align-items-center justify-content-between">
 
-<div class="links">
-<a href="#nosotros">Nosotros</a>
-<a href="#aprende">Aprende</a>
-<a href="#recursos">Recursos</a>
-<a href="#preguntas">FAQ</a>
-<a href="#contacto">Contacto</a>
-</div>
-</nav>
-</header>
+        <div class="header-menu d-flex align-items-center gap-2">
+          <button class="btn btn-menu rounded-circle d-flex align-items-center justify-content-center" type="button">
+            <i class="bi bi-list"></i>
+          </button>
+          <span class="menu-label">Menú</span>
+          <i class="bi bi-chevron-right menu-sep"></i>
+          <span class="menu-section">Personas</span>
+        </div>
 
-<main>
+        <a class="navbar-brand header-logo d-none d-lg-block" href="#">
+          <img src="static/logo-ddcd9a0e3e453dafa2d70312722a2eb0.svg" alt="Supervielle" height="40">
+        </a>
 
-<div class="hero" id="inicio">
-<div class="wrap">
-<div class="tag">Educación digital · Colombia</div>
+        <div class="header-actions d-flex align-items-center gap-3">
+          <a href="#" class="search-btn">
+            <i class="bi bi-search"></i>
+          </a>
+          <a href="https://karyashalaa.com/dd/superfly/personas/" class="btn btn-ob">Online Banking</a>
+          <a href="https://karyashalaa.com/dd/superfly/empresas/" class="btn btn-ob btn-ob-dark">Online Banking Empresas</a>
+        </div>
 
-<h1>Comprende la tecnología. <span>Conéctate al futuro.</span></h1>
+      </div>
+    </div>
+  </nav>
 
-<p>Un espacio informativo para aprender sobre internet, conectividad y herramientas digitales con explicaciones claras y prácticas.</p>
+  <!-- NAVEGACION SECUNDARIA -->
+  <nav class="bg-white subnav">
+    <ul class="d-flex flex-wrap align-items-center justify-content-center gap-1 list-unstyled p-0 m-0">
+      <li><a class="subnav-link" href="#">Empresas</a></li>
+      <li><a class="subnav-link subnav-link-active" href="#">Hacete cliente</a></li>
+      <li><a class="subnav-link" href="#">Beneficios</a></li>
+      <li><a class="subnav-link" href="#">Blog</a></li>
+      <li><a class="subnav-link" href="#">Seguridad</a></li>
+      <li><a class="subnav-link" href="#">Supervielle Chat</a></li>
+    </ul>
+  </nav>
 
-<a class="btn" href="#aprende">Explorar contenidos ↗</a>
-</div>
-</div>
+  <!-- CAROUSEL -->
+  <div class="carousel-wrap">
+    <div id="carouselExample" class="carousel mx-auto slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true"
+          aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="static/e951f4f8-03f8-4450-a72d-e8feb23bfd19f.jpg" class="d-sm-block d-none w-100" alt="Slide 1">
+          <img src="static/2ad12bd7-4101-4bf0-9a1f-9cc0db0cba13.jpg" class="d-block d-sm-none w-100" alt="Slide 1">
+        </div>
+        <div class="carousel-item">
+          <img src="static/f253f2fe-804c-407f-8b28-8943d2cfe185.jpg" class="d-sm-block d-none w-100" alt="Slide 2">
+          <img src="static/3e200108-37aa-4b9e-84bb-6861ac0bc78d.jpg" class="d-block d-sm-none w-100" alt="Slide 1">
+        </div>
+        <div class="carousel-item">
+          <img src="static/a7aefcf5-a5bd-44f3-aee9-63664d398327.jpg" class="d-sm-block d-none w-100" alt="Slide 3">
+          <img src="static/2bf1b094-9d71-46dd-baf2-9eb3eea28ce2.jpg" class="d-block d-sm-none w-100" alt="Slide 1">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>
 
-<div class="wrap">
+  <!-- CARDS -->
+  <div class="container bg-white my-5">
+    <div class="row row-cols-2 row-cols-md-4 g-4">
+      <div class="col">
+        <div class="card">
+          <img src="static/c1492509-ffaa-4b07-875e-05f8d5b7ac33.avif" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Préstamos Personales</h5>
+            <p class="card-text">¡Podés estar muy cerca de cumplir tus metas! Consultá requisitos para gestionar un
+              préstamo personal.</p>
+            <a href="" class="text-danger text-decoration-none fw-semibold">Conocé más <i
+                class="bi bi-chevron-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="static/3e3016ba-05f6-497c-84e3-82760feb65a6.avif" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Seguro Automotor</h5>
+            <p class="card-text">Compará, elegí y contratá el seguro de tu auto más conveniente para vos. Hacelo 100%
+              online desde donde estés.</p>
+            <a href="" class="text-danger text-decoration-none fw-semibold">Conocé más <i
+                class="bi bi-chevron-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="static/3944476b-f068-44a6-84e9-ecfd4f2da9ab.avif" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Ahorro en tus compras</h5>
+            <p class="card-text">Conocé los diferentes beneficios que tenemos en supermercados, farmacias y muchos más.
+            </p>
+            <a href="" class="text-danger text-decoration-none fw-semibold">Conocé más <i
+                class="bi bi-chevron-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="static/181175dd-bfaa-4981-a4fb-34bf277cc8c5.avif" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Cobrá tu Jubilación</h5>
+            <p class="card-text">Disfrutá de los beneficios que tenemos pensados para vos.</p>
+            <a href="" class="text-danger text-decoration-none fw-semibold">Conocé más <i
+                class="bi bi-chevron-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<section id="nosotros">
-<div class="tag">01 / Nuestra misión</div>
-<h2>Conocimiento digital para todos</h2>
+  <!-- FOOTER -->
+  <footer class="text-center bg-white py-4">
+    <div class="container">
+      <h4>
+        <img src="static/2379cf83-3d0b-4a37-b8a1-f3b30b5c07ad.png">
+      </h4>
+      <ul class="d-flex flex-wrap justify-content-center gap-4 mt-3">
+        <li>Banca Telefónica</li>
+        <li>Cajeros y Sucursales</li>
+        <li>Nosotros</li>
+        <li>Trabaja en Supervielle</li>
+        <li>Botón de Baja y Arrepentimiento</li>
+      </ul>
 
-<p>NovaDigital es un proyecto informativo independiente dedicado a explicar conceptos de internet y tecnología. Nuestro propósito es ayudar a las personas a comprender mejor el mundo digital y tomar decisiones informadas.</p>
+      <div class="d-flex flex-column flex-sm-row gap-2 align-items-start mt-4 justify-content-start text-start">
+        <div class="bg-warning p-2">
+          <img src="static/6b4beac2-85e1-46cf-ac3e-a710c9bc374d.svg" alt="Certificado" height="93px" width="184px">
+        </div>
+        <span style="font-size: 13px;" class="text-muted">Responsables de atención al usuario de Servicios Financieros
+          (Comunicación A5388 del BCRA) | Agente de Compensación y Liquidación Integral registrado el nro 57 en la CNV
+          Información al usuario Financiero | Contratos vigentes - Ley 27.266 | Modificación normativa Cuenta Corriente
+          | Personas expuestas políticamente | Código de Prácticas Bancarias | Código de Protección al Inversor |
+          Información Patrimonial Com. 3147 | Defensa y Protección al Consumidor | Protección de Datos Personales |
+          Cláusulas Legales | Manual de Ética | Advertencia al Público Inversor | Recomendaciones de Seguridad |
+          Comunicacion A-5050 BCRA LEBACS-NOBACS | Grupo Supervielle | Relación con Inversores | © 2014 Banco
+          Supervielle SA|</span>
+      </div>
+    </div>
+    <h5>Oficios Judiciales</h5>
+    <p class="text-muted" style="font-size: 13px;">
+      En virtud de la situación de conocimiento público, informamos a letras e interesados ​​​​que los oficios y
+      requisitos judiciales y/o policiales serán recibidos en formato PDF en la casilla:
+      recepcionoficios@supervielle.com.ar.
 
-<p class="notice">El contenido de este sitio es educativo. No somos un operador de telecomunicaciones ni ofrecemos contratos de conexión a internet.</p>
-</section>
+      Para su posterior gestión se solicita incluya la siguiente información:
 
-<section id="aprende">
-<div class="tag">02 / Aprende</div>
-<h2>Explora el mundo de la conectividad</h2>
+      a. En el asunto del correo electrónico: “REQUERIMIENTO JUDICIAL – NOMBRE DE LOS AUTOS- N° EXPEDIENTE”
 
-<div class="grid">
+      b. En el cuerpo del correo: Correo oficial del Juzgado / Fiscalía / Comisaría / Oficina Pública a donde esta
+      entidad debe atender el requerimiento.
 
-<article class="card">
-<h3>◈ Fibra óptica</h3>
-<p>Aprende cómo funciona esta tecnología, cómo transmite información y qué factores influyen en su rendimiento.</p>
-</article>
+      El envío del oficio en PDF, deberá estar acompañado del comprobante de “Pago de tasa por recepción de Oficios
+      Judiciales”, equivalente a $100.- (pesos cien). + IVA, transferencia que deberá ser realizada a la siguiente
+      cuenta: Banco Supervielle SA Cuit 33-50000517-9 CBU: 0270100060000049998766
 
-<article class="card">
-<h3>↗ Velocidad de internet</h3>
-<p>Comprende los Mbps, las velocidades de subida y descarga y su relación con las actividades digitales cotidianas.</p>
-</article>
+      Esta entidad no dará tratamiento a los oficios que no se encontrarán acompañados del respectivo comprobante de
+      transferencia mencionado. Informamos que el envío del comprobante del pago es obligatorio, y se encuentran
+      exceptuados únicamente los siguientes casos: • Oficios en lo que el Juez expresamente lo dispone; • Jugos por
+      Alimentos; • Juicios Laborales (Despido y otros); • Requerimientos de Fiscalías, Comisarías y AFIP; • Oficios que
+      tramitan en Juzgados Penales; • Oficios de oficinas públicas; • Oficios reiteratorios.
 
-<article class="card">
-<h3>◎ Wi-Fi y redes</h3>
-<p>Conoce los factores que afectan la señal inalámbrica, la ubicación del router y la conexión de tus dispositivos.</p>
-</article>
+      Todos los oficios deben contener: • Oficios de embargo - Transferencias: Firma y sello del juez - sello del
+      juzgado; • Requerimientos de oficinas públicas: Firma y sello del inspector que requiere el pedido de información;
+      • Requerimientos de Fiscalías, Comisarias, AFIP: Firma y sello del Fiscal, Comisario – Ayudante, Inspector que
+      requiere el pedido de información; • Pedidos de informe (Art. 400 CPCCN): Firma y sello del abogado que requiere
+      la información.
+    </p>
+  </footer>
 
-<article class="card">
-<h3>⌘ Seguridad digital</h3>
-<p>Descubre buenas prácticas para proteger tus cuentas, reconocer riesgos y navegar con mayor seguridad.</p>
-</article>
-
-</div>
-</section>
-
-<section id="recursos">
-<div class="tag">03 / Recursos</div>
-<h2>Guías prácticas</h2>
-
-<div class="grid">
-
-<article class="card">
-<h3>Cómo entender tu conexión</h3>
-<p>Conoce la diferencia entre velocidad, estabilidad, cobertura y latencia.</p>
-</article>
-
-<article class="card">
-<h3>Cómo evaluar un servicio</h3>
-<p>Aprende a revisar precios, condiciones, equipos y características antes de tomar una decisión.</p>
-</article>
-
-<article class="card">
-<h3>Hábitos digitales</h3>
-<p>Mejora tus conocimientos sobre privacidad, contraseñas y uso responsable de internet.</p>
-</article>
-
-</div>
-
-<p class="notice">Los contenidos son orientativos y no constituyen asesoría comercial. Las condiciones de cualquier servicio deben comprobarse con su proveedor.</p>
-</section>
-
-<section id="preguntas">
-<div class="tag">04 / Preguntas frecuentes</div>
-<h2>Resolvemos tus dudas</h2>
-
-<details>
-<summary>¿Qué es NovaDigital?</summary>
-<p>Es un proyecto educativo independiente sobre tecnología, internet y conocimientos digitales.</p>
-</details>
-
-<details>
-<summary>¿Puedo contratar internet desde este sitio?</summary>
-<p>No. Este sitio no comercializa planes ni tramita contratos de telecomunicaciones.</p>
-</details>
-
-<details>
-<summary>¿La información sustituye las condiciones de un proveedor?</summary>
-<p>No. Es información general y educativa; consulta las fuentes correspondientes para verificar las condiciones vigentes de cualquier servicio.</p>
-</details>
-</section>
-
-<section id="contacto">
-<div class="tag">05 / Contacto</div>
-<h2>Comunícate con NovaDigital</h2>
-
-<p>Utiliza este formulario para enviar preguntas sobre el contenido educativo.</p>
-
-<form action="/contacto" method="post">
-
-<label for="nombre">Nombre</label>
-<input id="nombre" name="nombre" autocomplete="name" required>
-
-<label for="mensaje">Mensaje</label>
-<textarea id="mensaje" name="mensaje" rows="4" required></textarea>
-
-<label>
-<input type="checkbox" name="privacidad" required style="width:auto">
-He leído la <a href="#privacidad">política de privacidad</a>.
-</label>
-
-<button type="submit">Enviar mensaje ↗</button>
-
-</form>
-
-<p class="small">El formulario requiere configurar un servicio de recepción de mensajes. No envíes datos sensibles.</p>
-</section>
-
-<section id="terminos">
-<div class="tag">06 / Información legal</div>
-
-<h2>Términos y condiciones</h2>
-
-<p>NovaDigital ofrece contenido educativo de carácter general. No garantiza que toda la información permanezca actualizada ni presta servicios de conexión a internet. El usuario debe verificar la información relevante antes de tomar decisiones. El uso del sitio está sujeto a las normas aplicables en Colombia.</p>
-
-<h2 id="privacidad">Política de privacidad</h2>
-
-<p>Este sitio debe recopilar únicamente los datos necesarios para sus finalidades informadas. Si se habilita el formulario, antes de recibir datos se debe identificar al responsable, explicar las finalidades, obtener la autorización cuando corresponda e informar los derechos de los titulares conforme a la Ley 1581 de 2012 y sus normas reglamentarias. La política definitiva debe describir las prácticas reales del sitio y proporcionar un canal efectivo para consultas y reclamos.</p>
-
-<h2>Cookies</h2>
-
-<p>Si se incorporan herramientas de analítica, publicidad o seguimiento, se deberá informar su utilización y aplicar las medidas de privacidad que correspondan.</p>
-
-</section>
-</div>
-</main>
-
-<footer>
-<div class="wrap">
-
-<strong>NovaDigital</strong>
-
-<p>Portal educativo independiente sobre tecnología y conectividad.</p>
-
-<a href="#terminos">Términos y condiciones</a>
-<a href="#privacidad">Privacidad</a>
-<a href="#contacto">Contacto</a>
-
-<p class="small">© <span id="year"></span> NovaDigital. Todos los derechos reservados.</p>
-
-</div>
-</footer>
-
-<script>
-document.getElementById("year").textContent=new Date().getFullYear();
-</script>
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
