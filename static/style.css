@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap');
+body,html{
+	height: 100%;
+}
+*{
+	font-family: "Heebo", sans-serif;
+}
+body{
+	background: url(nuevo-login-xs-9e6559dadd24ca654e349b72056099a9.jpg) top left no-repeat ;
+	background-size: contain;
+
+}
+.loginbox{
+	max-width: 796px;
+}
+
+header{
+	height: 103px;
+	margin-bottom: 30px;
+	padding-left:66px ;
+}
+main{
+	max-width: 530px;
+}
+.pete1{
+	background-image: url(icons.svg);
+    background-size: 420px 100px;
+    background-position-y: -5px;
+    background-position-x: -56px;
+    width: 39px;
+    height: 39px;
+    display: inline-block;
+    margin: 0 10px;
+}
+.pete2{
+	background-image: url(icons.svg);
+    background-size: 420px 100px;
+    background-position-y: -5px;
+    background-position-x: -106px;
+    width: 39px;
+    height: 39px;
+    padding-right: 5px;
+    padding-left: 5px;
+    display: inline-block;
+    margin: 0 10px;
+}
+.pete3{
+	background-image: url(icons.svg);
+    background-size: 420px 100px;
+    background-position-y: -5px;
+    background-position-x: -155px;
+    width: 39px;
+    height: 39px;
+    padding-right: 5px;
+    padding-left: 5px;
+    display: inline-block;
+    margin: 0 10px;
+}
+.title{
+	margin: 15px 0 55px 0;
+	font-size: 28px;
+	color: rgb(62, 62, 64);
+}
+.form-control{
+	height: 50px;
+	border:0;
+	border-bottom: rgba(26, 38, 51, 0.1) 1px solid !important;
+	margin-bottom: 18px;
+	color: rgb(62, 62, 64);
+	width: 323px;
+}
+.btn-danger{
+	background:rgb(213, 43, 30)!important;
+	border-color: rgb(213, 43, 30)!important;
+	padding:15px 20px !important ;
+	border-radius: 6px;
+}
+.text-danger{
+	color: rgb(213, 43, 30)!important;
+}
+.btn-outline-danger{
+	color: rgb(213, 43, 30)!important;
+	border-color: rgb(213, 43, 30)!important;
+}
+.fs14{
+	font-size: 14px;
+}
+footer{
+	max-width: 530px;
+	color: rgba(26, 38, 51, 0.5);
+	font-size: 12px;
+}
+footer a {
+color: rgba(26, 38, 51, 0.5);
+
+}
+::placeholder{
+	font-size: 19px;
+}
+.grey{
+	color: rgb(62, 62, 64);
+	fill: rgb(62, 62, 64);
+}
+.loaderbox{
+	z-index: 999;
+	background:#0007;
+	backdrop-filter: blur(10px);
+}
+.container-loadin{
+	position: relative;
+	height: 120px;
+	width: 120px;
+}
+.spinner{
+	height: 120px;
+	width: 120px;
+	border:20px solid #FFF;
+	border-radius: 120px;
+	border-left-color: #0001;
+	animation: 1s linear infinite spinner;
+}
+@keyframes spinner{
+	from{
+		transform: rotate(0deg);
+	}to{
+		transform: rotate(360deg);
+	}
+}
+@media (max-width: 590px){
+	header,main{
+		padding-left: 31px;
+	}
+	.logo{
+		height: 58px;
+	}
+	.btn-outline-danger{
+		font-size: 14px;
+	}
+	.listiiiiiiii{
+		position: relative;
+		left: -15px;
+	}
+	.title{
+		font-size: 26px;
+	}
+
+}

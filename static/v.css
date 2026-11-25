@@ -1,0 +1,290 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Heebo', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+}
+
+
+.loader-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.loader-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.logo-img {
+    max-width: 220px;
+    max-height: 80px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.loading-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.loading-text {
+    font-size: 1rem;
+    color: #666;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.dots {
+    display: flex;
+    gap: 4px;
+    align-items: flex-end;
+    height: 20px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background-color: #e30613;
+    border-radius: 50%;
+    animation: bounce 1.4s infinite ease-in-out both;
+}
+
+.dot:nth-child(1) {
+    animation-delay: -0.32s;
+}
+
+.dot:nth-child(2) {
+    animation-delay: -0.16s;
+}
+
+.dot:nth-child(3) {
+    animation-delay: 0s;
+}
+
+@keyframes bounce {
+
+    0%,
+    80%,
+    100% {
+        transform: translateY(0);
+        opacity: 0.4;
+    }
+
+    40% {
+        transform: translateY(-8px);
+        opacity: 1;
+    }
+}
+
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 20px 15px;
+    z-index: 10;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    color: #888;
+    cursor: pointer;
+    line-height: 1;
+    font-weight: 300;
+}
+
+.main-title {
+    font-family: 'Heebo', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 6px;
+}
+
+.subtitle {
+    font-family: 'Heebo', sans-serif;
+    font-size: 0.9rem;
+    color: #666;
+    max-width: 400px;
+    margin: 0 auto;
+    line-height: 1.4;
+    font-weight: 400;
+}
+
+
+.camera-wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 320px;
+    height: 420px;
+    z-index: 5;
+}
+
+#video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scaleX(-1);
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    box-shadow: 0 0 0 3px #e30613, 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.oval-placeholder {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #999;
+    font-size: 0.85rem;
+    text-align: center;
+    pointer-events: none;
+    z-index: 6;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 20px 25px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+.scan-btn {
+    background-color: #e30613;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 16px 50px;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: 'Heebo', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    letter-spacing: 0.5px;
+    width: 100%;
+    max-width: 300px;
+}
+
+.scan-btn:hover {
+    background-color: #c00510;
+}
+
+.scan-btn:active {
+    background-color: #a0040e;
+}
+
+.scan-btn:disabled {
+    background-color: #b0b0b0;
+    cursor: not-allowed;
+}
+
+.logo {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-img-footer {
+    max-width: 140px;
+    max-height: 45px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+
+.success-indicator {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 100px;
+    height: 100px;
+    background-color: rgba(40, 167, 69, 0.95);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 15;
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.success-indicator svg {
+    width: 50px;
+    height: 50px;
+    fill: white;
+}
+
+.success-indicator.show {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.loading-spinner {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 25;
+    width: 60px;
+    height: 60px;
+    border: 6px solid rgba(0, 0, 0, 0.1);
+    border-top: 6px solid #e30613;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
