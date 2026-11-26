@@ -1,226 +1,247 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#ffffff">
-<meta name="description" content="NovaDigital: portal educativo sobre internet, conectividad, fibra óptica y tecnología digital en Colombia.">
 
-<title>NovaDigital | Tecnología y conectividad</title>
+<meta name="description"
+content="NovaDigital es un proyecto independiente de información y educación digital sobre internet, conectividad, fibra óptica y tecnología en Colombia.">
 
-<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-TG2C454F"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-</script>
+<meta name="robots" content="index, follow">
+
+<title>NovaDigital | Educación y tecnología digital</title>
+
 <style>
-:root{
---bg:#ffffff;
---panel:#ffffff;
---line:#e5e7eb;
---blue:#3978e8;
---blue-light:#eef4ff;
---text:#202938;
---muted:#667085;
+:root {
+  --blue: #2864cf;
+  --blue-dark: #174a9e;
+  --blue-light: #eff5ff;
+  --text: #202938;
+  --muted: #667085;
+  --line: #e5eaf0;
+  --bg: #ffffff;
+  --soft: #f8faff;
 }
 
-*{box-sizing:border-box}
-
-html{scroll-behavior:smooth}
-
-body{
-margin:0;
-background:var(--bg);
-color:var(--text);
-font:16px/1.7 system-ui,Arial,sans-serif;
+* {
+  box-sizing: border-box;
 }
 
-a{color:var(--blue)}
-
-.wrap{
-width:min(1050px,92%);
-margin:auto;
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
 }
 
-header{
-position:sticky;
-top:0;
-z-index:5;
-background:#ffffffee;
-border-bottom:1px solid var(--line);
-backdrop-filter:blur(12px);
+body {
+  margin: 0;
+  font: 16px/1.75 system-ui, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
 }
 
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:15px;
-flex-wrap:wrap;
-padding:17px 0;
+a {
+  color: var(--blue);
 }
 
-.logo{
-font-size:23px;
-font-weight:850;
-color:var(--blue);
-text-decoration:none;
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #94baff;
+  outline-offset: 3px;
 }
 
-.links{
-display:flex;
-gap:16px;
-flex-wrap:wrap;
+.container {
+  width: min(1080px, 92%);
+  margin: auto;
 }
 
-.links a{
-text-decoration:none;
-font-size:14px;
-color:#374151;
+/* NAVEGACIÓN */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255,255,255,.97);
+  border-bottom: 1px solid var(--line);
 }
 
-.links a:hover{color:var(--blue)}
-
-.hero{
-padding:85px 0;
-background:linear-gradient(135deg,#ffffff,#f3f7ff);
-border-bottom:1px solid var(--line);
+nav {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-.tag{
-font-size:12px;
-letter-spacing:2px;
-color:var(--blue);
-text-transform:uppercase;
-font-weight:700;
+.logo {
+  font-size: 24px;
+  font-weight: 850;
+  text-decoration: none;
+  color: var(--blue);
 }
 
-h1{
-font-size:clamp(38px,7vw,66px);
-line-height:1.1;
-letter-spacing:-2px;
-max-width:800px;
-color:#182230;
+.nav-links {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
 }
 
-h1 span{color:var(--blue)}
-
-h2{
-font-size:28px;
-line-height:1.3;
-color:#202938;
+.nav-links a {
+  text-decoration: none;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 600;
 }
 
-p{color:var(--muted)}
+/* PORTADA */
 
-.btn{
-display:inline-block;
-background:var(--blue);
-color:#ffffff;
-padding:12px 20px;
-border-radius:7px;
-text-decoration:none;
-font-weight:800;
-margin:10px 8px 0 0;
-transition:.2s;
+.hero {
+  padding: 90px 0;
+  background: linear-gradient(135deg,#ffffff,#edf4ff);
+  border-bottom: 1px solid var(--line);
 }
 
-.btn:hover{
-background:#245fc5;
-transform:translateY(-2px);
+.tag {
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
-section{
-padding:38px 0;
-scroll-margin-top:85px;
+h1 {
+  max-width: 850px;
+  font-size: clamp(38px,7vw,66px);
+  line-height: 1.12;
+  letter-spacing: -2px;
 }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:16px;
+h1 span {
+  color: var(--blue);
 }
 
-.card{
-background:#ffffff;
-border:1px solid var(--line);
-border-radius:13px;
-padding:22px;
-box-shadow:0 4px 16px rgba(15,23,42,.035);
-transition:.2s;
+h2 {
+  font-size: 29px;
+  line-height: 1.3;
 }
 
-.card:hover{
-transform:translateY(-3px);
-box-shadow:0 8px 24px rgba(15,23,42,.08);
+h3 {
+  line-height: 1.4;
 }
 
-.card h3{
-color:var(--blue);
-margin-top:0;
+p {
+  color: var(--muted);
 }
 
-.notice{
-padding:15px 18px;
-border-left:3px solid var(--blue);
-background:#f5f8ff;
-border-radius:5px;
+.hero p {
+  max-width: 700px;
+  font-size: 18px;
 }
 
-input,textarea{
-width:100%;
-font:inherit;
-padding:12px;
-margin:8px 0 14px;
-border:1px solid var(--line);
-border-radius:6px;
-background:#ffffff;
-color:#202938;
+.btn {
+  display: inline-block;
+  background: var(--blue);
+  color: white;
+  text-decoration: none;
+  font-weight: 750;
+  padding: 12px 21px;
+  border-radius: 8px;
+  margin-top: 12px;
 }
 
-button{
-width:100%;
-font:inherit;
-padding:12px;
-margin:8px 0 14px;
-border:0;
-border-radius:6px;
-background:var(--blue);
-color:#ffffff;
-font-weight:800;
-cursor:pointer;
+.btn:hover {
+  background: var(--blue-dark);
 }
 
-button:hover{background:#245fc5}
+/* SECCIONES */
 
-label{color:var(--muted)}
-
-details{
-padding:15px 0;
-border-bottom:1px solid var(--line);
+section {
+  padding: 55px 0;
+  border-bottom: 1px solid var(--line);
 }
 
-summary{
-color:var(--blue);
-font-weight:700;
-cursor:pointer;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(220px,1fr)
+  );
+  gap: 18px;
 }
 
-footer{
-border-top:1px solid var(--line);
-padding:30px 0;
-background:#fafbfc;
+.card {
+  padding: 23px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  box-shadow: 0 4px 15px rgba(20,40,80,.04);
 }
 
-footer a{margin-right:14px}
+.card h3 {
+  color: var(--blue);
+  margin-top: 0;
+}
 
-.small{font-size:13px}
+.notice {
+  padding: 18px;
+  background: var(--blue-light);
+  border-left: 4px solid var(--blue);
+  border-radius: 7px;
+}
 
-@media(max-width:600px){
-.hero{padding:55px 0}
-.links{gap:10px}
-h2{font-size:24px}
+.muted {
+  color: var(--muted);
+}
+
+.legal p {
+  margin-bottom: 18px;
+}
+
+/* PIE */
+
+footer {
+  padding: 38px 0;
+  background: var(--soft);
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin: 15px 0;
+}
+
+.footer-links a {
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.small {
+  font-size: 13px;
+}
+
+@media(max-width:650px) {
+  nav {
+    padding: 15px 0;
+  }
+
+  .nav-links {
+    gap: 12px;
+  }
+
+  .hero {
+    padding: 60px 0;
+  }
+
+  h1 {
+    letter-spacing: -1px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
 }
 </style>
 </head>
@@ -228,182 +249,383 @@ h2{font-size:24px}
 <body>
 
 <header>
-<nav class="wrap">
+<nav class="container">
+
 <a class="logo" href="#inicio">NovaDigital</a>
 
-<div class="links">
+<div class="nav-links">
 <a href="#nosotros">Nosotros</a>
 <a href="#aprende">Aprende</a>
 <a href="#recursos">Recursos</a>
-<a href="#preguntas">FAQ</a>
+<a href="#preguntas">Preguntas</a>
 <a href="#contacto">Contacto</a>
 </div>
+
 </nav>
 </header>
 
 <main>
 
+<!-- PORTADA -->
+
 <div class="hero" id="inicio">
-<div class="wrap">
-<div class="tag">Educación digital · Colombia</div>
+<div class="container">
 
-<h1>Comprende la tecnología. <span>Conéctate al futuro.</span></h1>
+<div class="tag">
+Educación digital · Colombia
+</div>
 
-<p>Un espacio informativo para aprender sobre internet, conectividad y herramientas digitales con explicaciones claras y prácticas.</p>
+<h1>
+Comprende la tecnología.
+<span>Conéctate al futuro.</span>
+</h1>
 
-<a class="btn" href="#aprende">Explorar contenidos ↗</a>
+<p>
+NovaDigital es un espacio independiente de información
+y aprendizaje sobre internet, conectividad y tecnología.
+Nuestro propósito es ofrecer explicaciones claras que
+ayuden a comprender mejor el entorno digital.
+</p>
+
+<a class="btn" href="#aprende">
+Explorar contenidos
+</a>
+
 </div>
 </div>
 
-<div class="wrap">
+<div class="container">
+
+<!-- NOSOTROS -->
 
 <section id="nosotros">
-<div class="tag">01 / Nuestra misión</div>
+
+<div class="tag">01 / Nosotros</div>
+
 <h2>Conocimiento digital para todos</h2>
 
-<p>NovaDigital es un proyecto informativo independiente dedicado a explicar conceptos de internet y tecnología. Nuestro propósito es ayudar a las personas a comprender mejor el mundo digital y tomar decisiones informadas.</p>
+<p>
+NovaDigital es un proyecto informativo independiente
+enfocado en la divulgación de conocimientos sobre
+internet, redes, conectividad y herramientas digitales.
+</p>
 
-<p class="notice">El contenido de este sitio es educativo. No somos un operador de telecomunicaciones ni ofrecemos contratos de conexión a internet.</p>
+<p>
+Nuestro objetivo es proporcionar información general,
+educativa y comprensible para personas interesadas en
+conocer cómo funcionan las tecnologías que utilizan
+diariamente.
+</p>
+
+<div class="notice">
+<strong>Transparencia:</strong>
+NovaDigital es un proyecto independiente de información.
+No debe interpretarse como un operador de
+telecomunicaciones ni como representante de proveedores
+de internet.
+</div>
+
 </section>
 
+<!-- APRENDIZAJE -->
+
 <section id="aprende">
+
 <div class="tag">02 / Aprende</div>
+
 <h2>Explora el mundo de la conectividad</h2>
 
 <div class="grid">
 
 <article class="card">
-<h3>◈ Fibra óptica</h3>
-<p>Aprende cómo funciona esta tecnología, cómo transmite información y qué factores influyen en su rendimiento.</p>
+<h3>Fibra óptica</h3>
+<p>
+La fibra óptica transmite información mediante señales
+de luz a través de filamentos especializados.
+Se utiliza en redes de telecomunicaciones para transportar
+grandes cantidades de datos.
+</p>
 </article>
 
 <article class="card">
-<h3>↗ Velocidad de internet</h3>
-<p>Comprende los Mbps, las velocidades de subida y descarga y su relación con las actividades digitales cotidianas.</p>
+<h3>Velocidad de internet</h3>
+<p>
+La velocidad de conexión suele expresarse en megabits
+por segundo (Mbps). Es importante distinguir entre
+descarga, carga, latencia y estabilidad.
+</p>
 </article>
 
 <article class="card">
-<h3>◎ Wi-Fi y redes</h3>
-<p>Conoce los factores que afectan la señal inalámbrica, la ubicación del router y la conexión de tus dispositivos.</p>
+<h3>Wi-Fi y redes</h3>
+<p>
+Las redes inalámbricas permiten conectar dispositivos
+sin cables. La distancia, los obstáculos y las
+interferencias pueden influir en su rendimiento.
+</p>
 </article>
 
 <article class="card">
-<h3>⌘ Seguridad digital</h3>
-<p>Descubre buenas prácticas para proteger tus cuentas, reconocer riesgos y navegar con mayor seguridad.</p>
+<h3>Seguridad digital</h3>
+<p>
+La protección de contraseñas, la verificación en dos pasos
+y la identificación de mensajes sospechosos son hábitos
+importantes para navegar de forma segura.
+</p>
 </article>
 
 </div>
 </section>
 
+<!-- RECURSOS -->
+
 <section id="recursos">
+
 <div class="tag">03 / Recursos</div>
-<h2>Guías prácticas</h2>
+
+<h2>Información para tomar decisiones informadas</h2>
 
 <div class="grid">
 
 <article class="card">
-<h3>Cómo entender tu conexión</h3>
-<p>Conoce la diferencia entre velocidad, estabilidad, cobertura y latencia.</p>
+<h3>Comprender tu conexión</h3>
+<p>
+Conoce las diferencias entre velocidad, cobertura,
+latencia y estabilidad de una conexión a internet.
+</p>
 </article>
 
 <article class="card">
-<h3>Cómo evaluar un servicio</h3>
-<p>Aprende a revisar precios, condiciones, equipos y características antes de tomar una decisión.</p>
+<h3>Evaluar servicios</h3>
+<p>
+Antes de contratar un servicio, revisa el precio,
+las condiciones, la cobertura, los equipos y
+las características ofrecidas por el proveedor.
+</p>
 </article>
 
 <article class="card">
-<h3>Hábitos digitales</h3>
-<p>Mejora tus conocimientos sobre privacidad, contraseñas y uso responsable de internet.</p>
+<h3>Privacidad digital</h3>
+<p>
+Aprende por qué es importante proteger tus datos,
+revisar los permisos de las aplicaciones y
+utilizar contraseñas seguras.
+</p>
 </article>
 
 </div>
 
-<p class="notice">Los contenidos son orientativos y no constituyen asesoría comercial. Las condiciones de cualquier servicio deben comprobarse con su proveedor.</p>
+<p class="notice">
+La información publicada tiene carácter general y
+educativo. Las condiciones de los servicios comerciales
+deben verificarse directamente con cada proveedor.
+</p>
+
 </section>
 
+<!-- PREGUNTAS -->
+
 <section id="preguntas">
+
 <div class="tag">04 / Preguntas frecuentes</div>
-<h2>Resolvemos tus dudas</h2>
+
+<h2>Preguntas frecuentes</h2>
 
 <details>
 <summary>¿Qué es NovaDigital?</summary>
-<p>Es un proyecto educativo independiente sobre tecnología, internet y conocimientos digitales.</p>
+<p>
+Es un proyecto independiente de información y educación
+sobre internet, conectividad y tecnología digital.
+</p>
 </details>
 
 <details>
-<summary>¿Puedo contratar internet desde este sitio?</summary>
-<p>No. Este sitio no comercializa planes ni tramita contratos de telecomunicaciones.</p>
+<summary>¿NovaDigital ofrece planes de internet?</summary>
+<p>
+Este proyecto informativo no comercializa directamente
+planes de conexión ni celebra contratos de telecomunicaciones.
+</p>
 </details>
 
 <details>
-<summary>¿La información sustituye las condiciones de un proveedor?</summary>
-<p>No. Es información general y educativa; consulta las fuentes correspondientes para verificar las condiciones vigentes de cualquier servicio.</p>
+<summary>¿La información es asesoría técnica personalizada?</summary>
+<p>
+No. Los contenidos son de carácter general y educativo.
+Para problemas específicos debes consultar al proveedor
+o a un profesional competente.
+</p>
 </details>
+
+<details>
+<summary>¿La información puede cambiar?</summary>
+<p>
+Sí. Las tecnologías y condiciones de los servicios
+pueden actualizarse. Es recomendable verificar los datos
+en fuentes oficiales.
+</p>
+</details>
+
+<details>
+<summary>¿Cómo puedo comunicarme con NovaDigital?</summary>
+<p>
+Puedes utilizar el canal de contacto que se publique
+en esta sección cuando esté habilitado y verificado.
+</p>
+</details>
+
 </section>
+
+<!-- CONTACTO -->
 
 <section id="contacto">
+
 <div class="tag">05 / Contacto</div>
-<h2>Comunícate con NovaDigital</h2>
 
-<p>Utiliza este formulario para enviar preguntas sobre el contenido educativo.</p>
+<h2>Contacto y transparencia</h2>
 
-<form action="/contacto" method="post">
+<p>
+Para consultas relacionadas con el contenido de
+NovaDigital, puedes comunicarte a través del siguiente
+correo electrónico, una vez que hayas configurado
+una dirección real y funcional.
+</p>
 
-<label for="nombre">Nombre</label>
-<input id="nombre" name="nombre" autocomplete="name" required>
+<p>
+<strong>Responsable del proyecto:</strong>
+[AGREGAR NOMBRE REAL DEL RESPONSABLE]
+</p>
 
-<label for="mensaje">Mensaje</label>
-<textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+<p>
+<strong>Correo electrónico:</strong>
+[AGREGAR CORREO REAL]
+</p>
 
-<label>
-<input type="checkbox" name="privacidad" required style="width:auto">
-He leído la <a href="#privacidad">política de privacidad</a>.
-</label>
+<p class="small">
+No publiques datos personales o de contacto que
+no estés autorizado a divulgar.
+</p>
 
-<button type="submit">Enviar mensaje ↗</button>
-
-</form>
-
-<p class="small">El formulario requiere configurar un servicio de recepción de mensajes. No envíes datos sensibles.</p>
 </section>
 
-<section id="terminos">
+<!-- INFORMACIÓN LEGAL -->
+
+<section id="legal" class="legal">
+
 <div class="tag">06 / Información legal</div>
 
-<h2>Términos y condiciones</h2>
+<h2 id="terminos">Términos y condiciones</h2>
 
-<p>NovaDigital ofrece contenido educativo de carácter general. No garantiza que toda la información permanezca actualizada ni presta servicios de conexión a internet. El usuario debe verificar la información relevante antes de tomar decisiones. El uso del sitio está sujeto a las normas aplicables en Colombia.</p>
+<p>
+El sitio NovaDigital ofrece información general y
+contenidos educativos relacionados con internet,
+conectividad y tecnología digital.
+</p>
+
+<p>
+Los contenidos se proporcionan con fines informativos.
+No constituyen una oferta comercial, garantía de servicio
+ni asesoría profesional personalizada.
+</p>
+
+<p>
+Los usuarios deben verificar las características,
+precios y condiciones de cualquier servicio directamente
+con el proveedor correspondiente.
+</p>
+
+<p>
+El uso del sitio debe realizarse de forma lícita,
+responsable y respetando los derechos de terceros
+y las normas aplicables en Colombia.
+</p>
 
 <h2 id="privacidad">Política de privacidad</h2>
 
-<p>Este sitio debe recopilar únicamente los datos necesarios para sus finalidades informadas. Si se habilita el formulario, antes de recibir datos se debe identificar al responsable, explicar las finalidades, obtener la autorización cuando corresponda e informar los derechos de los titulares conforme a la Ley 1581 de 2012 y sus normas reglamentarias. La política definitiva debe describir las prácticas reales del sitio y proporcionar un canal efectivo para consultas y reclamos.</p>
+<p>
+NovaDigital debe tratar los datos personales de acuerdo
+con la legislación colombiana aplicable, incluyendo
+la Ley 1581 de 2012 y sus normas reglamentarias.
+</p>
 
-<h2>Cookies</h2>
+<p>
+En esta versión del sitio no se encuentra habilitado
+un formulario para recopilar nombres, teléfonos u
+otros datos personales de visitantes.
+</p>
 
-<p>Si se incorporan herramientas de analítica, publicidad o seguimiento, se deberá informar su utilización y aplicar las medidas de privacidad que correspondan.</p>
+<p>
+Si en el futuro se habilitan formularios, mecanismos
+de registro, analítica o herramientas de seguimiento,
+se deberá informar previamente sobre los datos
+recopilados, las finalidades, los responsables,
+los derechos de los titulares y los canales para
+consultas y reclamos.
+</p>
+
+<p>
+El responsable deberá publicar una política definitiva
+que describa las prácticas reales del sitio y obtener
+las autorizaciones necesarias cuando corresponda.
+</p>
+
+<p>
+Los titulares podrán ejercer los derechos de conocer,
+actualizar y rectificar sus datos personales, así como
+los demás derechos previstos por la legislación aplicable.
+</p>
+
+<h2 id="cookies">Cookies y tecnologías similares</h2>
+
+<p>
+Esta versión no incorpora deliberadamente herramientas
+de publicidad o seguimiento de terceros. Si se integran
+servicios de analítica, publicidad o cookies en el futuro,
+se deberá actualizar esta información y cumplir
+las obligaciones de privacidad aplicables.
+</p>
+
+<h2>Independencia editorial</h2>
+
+<p>
+NovaDigital es un proyecto informativo independiente.
+La publicación de contenidos sobre tecnologías,
+conectividad o proveedores no implica por sí misma
+una relación comercial, patrocinio o representación.
+</p>
 
 </section>
+
 </div>
 </main>
 
 <footer>
-<div class="wrap">
+<div class="container">
 
 <strong>NovaDigital</strong>
 
-<p>Portal educativo independiente sobre tecnología y conectividad.</p>
+<p>
+Proyecto independiente de información y educación digital.
+</p>
 
-<a href="#terminos">Términos y condiciones</a>
+<div class="footer-links">
+<a href="#nosotros">Nosotros</a>
+<a href="#terminos">Términos</a>
 <a href="#privacidad">Privacidad</a>
+<a href="#cookies">Cookies</a>
 <a href="#contacto">Contacto</a>
+</div>
 
-<p class="small">© <span id="year"></span> NovaDigital. Todos los derechos reservados.</p>
+<p class="small">
+© <span id="year"></span> NovaDigital.
+Todos los derechos reservados.
+</p>
 
 </div>
 </footer>
 
 <script>
-document.getElementById("year").textContent=new Date().getFullYear();
+document.getElementById("year").textContent =
+new Date().getFullYear();
 </script>
 
 </body>
